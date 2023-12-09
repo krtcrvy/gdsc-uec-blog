@@ -5,8 +5,11 @@
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <meta content="{{ csrf_token() }}" name="csrf-token">
 
-        <title>{{ isset($title) ? $title . ' - ' . config('app.name', 'Laravel') : config('app.name', 'Laravel') }}
+        <title>{{ isset($title) ? $title . ' | ' . config('app.name', 'Laravel') : config('app.name', 'Laravel') }}
         </title>
+
+        <link href="{{ asset('/images/favicon/logo.svg') }}" rel="icon" type="image/x-icon">
+        <link href="{{ asset('/images/favicon/site.webmanifest') }}" rel="manifest">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com" rel="preconnect">
