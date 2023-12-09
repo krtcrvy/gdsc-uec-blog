@@ -1,5 +1,5 @@
 <header x-data="{ isOpen: false }">
-    <nav class="border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-800 lg:px-6">
+    <nav class="fixed w-full border-gray-200 bg-white px-4 py-2.5 dark:bg-gray-800 lg:px-6" id="main-nav">
         <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
             <div class="mr-8 flex items-center justify-center gap-2">
                 <button @click="isOpen = !isOpen"

@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('home');
-
+Route::get('/view-posts', function () {
+    return view('view-posts');
+});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

@@ -5,5 +5,9 @@
 
     <x-header />
 
+    <x-home.hero-section />
+
+    <x-home.blog-section />
+
     <x-footer />
 </x-app-layout>
