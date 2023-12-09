@@ -14,18 +14,16 @@
                     </svg>
                 </button>
 
-                <a class="flex items-center gap-2" href="{{ route('home') }}">
-                    <x-application-mark class="block h-9 w-auto" />
-                    <span
-                        class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">{{ __('App Name') }}</span>
+                <a class="flex items-center gap-2" href="{{ route('home') }}" wire:navigate>
+                    <x-application-logo />
                 </a>
             </div>
 
             <div class="flex items-center justify-center gap-2 lg:order-2">
-                <x-secondary-button :asLink="true"
-                    href="{{ route('login') }}">{{ __('Log in') }}</x-secondary-button>
-                <x-primary-button :asLink="true"
-                    href="{{ route('register') }}">{{ __('Register') }}</x-primary-button>
+                <x-secondary-button :asLink="true" href="{{ route('login') }}"
+                    wire:navigate>{{ __('Log in') }}</x-secondary-button>
+                <x-primary-button :asLink="true" href="{{ route('register') }}"
+                    wire:navigate>{{ __('Register') }}</x-primary-button>
                 <button @click="darkMode=!darkMode"
                     class="rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                     type="button">
@@ -52,7 +50,8 @@
                 class="mr-auto w-full items-center justify-between lg:order-1 lg:flex lg:w-auto" x-cloak>
                 <ul class="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-8">
                     <li>
-                        <x-nav-link :active="request()->routeIs('home')" href="{{ route('home') }}">{{ __('Home') }}</x-nav-link>
+                        <x-nav-link :active="request()->routeIs('home')" href="{{ route('home') }}"
+                            wire:navigate>{{ __('Home') }}</x-nav-link>
                     </li>
                     <li>
                         <x-nav-link :active="request()->routeIs('about')" href="#">{{ __('About') }}</x-nav-link>

@@ -3,5 +3,7 @@
         {{ __('Home') }}
     </x-slot>
 
-    <x-header/>
+    <x-header />
+
+    <x-footer />
 </x-app-layout>
