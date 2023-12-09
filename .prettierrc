@@ -4,15 +4,19 @@
     "wrapAttributes": "auto",
     "wrapAttributesMinAttrs": 2,
     "sortTailwindcssClasses": true,
-    "sortHtmlAttributes": "none",
+    "sortHtmlAttributes": "alphabetical",
     "noPhpSyntaxCheck": false,
     "indentInnerHtml": true,
     "extraLiners": "",
     "trailingCommaPHP": true,
-    "plugins": ["@shufo/prettier-plugin-blade"],
+    "plugins": [
+        "@shufo/prettier-plugin-blade"
+    ],
     "overrides": [
         {
-            "files": ["*.blade.php"],
+            "files": [
+                "*.blade.php"
+            ],
             "options": {
                 "parser": "blade",
                 "tabWidth": 4
