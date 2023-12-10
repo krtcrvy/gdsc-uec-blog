@@ -24,7 +24,8 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body :class="{ 'dark': darkMode === true }" class="font-sans antialiased" x-data="{ darkMode: $persist(false) }">
+    <body :class="{ 'dark': darkMode === true }"
+        class="bg-white font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-white" x-data="{ darkMode: $persist(false) }">
 
         <!-- Page Content -->
         <main>
