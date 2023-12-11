@@ -18,13 +18,16 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet">
 
+        @trixassets
+
+        @livewireStyles
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- Styles -->
-        @livewireStyles
     </head>
-    <body :class="{ 'dark': darkMode === true }" class="font-sans antialiased" x-data="{ darkMode: $persist(false) }">
+    <body :class="{ 'dark': darkMode === true }"
+          class="bg-white font-sans text-gray-900 antialiased dark:text-white dark:bg-gray-900"
+          x-data="{ darkMode: $persist(false) }">
 
         <!-- Page Content -->
         <main>
