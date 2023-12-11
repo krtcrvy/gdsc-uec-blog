@@ -3,7 +3,11 @@
         {{ __('Home') }}
     </x-slot>
 
-    <x-header />
+    <x-header/>
 
-    <x-footer />
+    <x-home.hero-section/>
+
+    <livewire:blog-grid/>
+
+    <x-footer/>
 </x-app-layout>

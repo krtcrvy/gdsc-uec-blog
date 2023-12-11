@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -25,9 +26,8 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:50|min:1',
+            'body' => 'required',
             'post_image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
-            'post-trixFields' => 'required',
-            'attachment-post-trixFields' => 'nullable',
         ]);
 
         if ($request->hasFile('post_image_path')) {
@@ -35,12 +35,11 @@ class PostController extends Controller
         }
 
         $post = Post::create([
-            'user_id' => $request->user()->id,
+            'user_id' => auth()->user()->id,
             'title' => $validatedData['title'],
             'slug' => Str::slug($validatedData['title'], '-'),
+            'body' => Markdown::convert($validatedData['body'])->getContent(),
             'post_image_path' => $validatedData['post_image_path'],
-            'post-trixFields' => $validatedData['post-trixFields'],
-            'attachment-post-trixFields' => $validatedData['attachment-post-trixFields'],
         ]);
 
         session()->flash('success', 'Your post has been published!');
@@ -61,11 +60,8 @@ class PostController extends Controller
      */
     public function show(Post $post): View
     {
-        $post_content = $post->trix_rich_texts->first()->content;
-
         return view('posts.show', [
             'post' => $post,
-            'post_content' => $post_content,
         ]);
     }
 

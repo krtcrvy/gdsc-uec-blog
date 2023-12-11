@@ -11,10 +11,7 @@
                         <x-input :value="old('title')" autofocus id="title" name="title" required type="text"/>
                         <x-input-error class="mt-2" for="title"/>
                     </div>
-
-                    <div class="sm:col-span-2">
-                        
-                    </div>
+                    
                     <div class="sm:col-span-2">
 
                         <div class="flex w-full items-center justify-center">
@@ -45,11 +42,9 @@
 
                     </div>
                     <div class="sm:col-span-2">
-                        <x-label for="post-trixFields" value="{{ __('Body') }}"/>
-
-                        @trix(\App\Models\Post::class, 'content')
-
-                        <x-input-error class="mt-2" for="post-trixFields[content]"/>
+                        <x-label for="body" value="{{ __('Body') }}"/>
+                        <textarea id="markdown-editor" name="body"></textarea>
+                        <x-input-error class="mt-2" for="body"/>
                     </div>
                 </div>
                 <x-primary-button class="mt-4">

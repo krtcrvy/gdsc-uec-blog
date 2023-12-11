@@ -39,7 +39,7 @@
 
                 <div
                     class="prose dark:prose-invert sm:prose-sm md:prose-base lg:prose-lg prose-img:rounded-lg">
-                    {!! $post_content !!}
+                    {!! $post->body !!}
                 </div>
             </article>
         </div>
