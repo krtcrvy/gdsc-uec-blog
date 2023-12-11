@@ -1,12 +1,7 @@
 <x-app-layout>
     <x-header/>
-
     <section class="bg-white dark:bg-gray-900">
         <div class="mx-auto max-w-3xl px-4 py-8 lg:py-16">
-            @if(session()->has('success'))
-                <x-success-alert/>
-            @endif
-
             <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">{{ __('Tell your story') }}</h2>
             <form action="{{ route('posts.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
@@ -15,6 +10,10 @@
                         <x-label for="title" value="{{ __('Title') }}"/>
                         <x-input :value="old('title')" autofocus id="title" name="title" required type="text"/>
                         <x-input-error class="mt-2" for="title"/>
+                    </div>
+
+                    <div class="sm:col-span-2">
+                        
                     </div>
                     <div class="sm:col-span-2">
 

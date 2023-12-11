@@ -38,14 +38,14 @@ class PostController extends Controller
             'user_id' => $request->user()->id,
             'title' => $validatedData['title'],
             'slug' => Str::slug($validatedData['title'], '-'),
-            'post_image_path' => $validatedData['post_image_path'] ?? null,
+            'post_image_path' => $validatedData['post_image_path'],
             'post-trixFields' => $validatedData['post-trixFields'],
             'attachment-post-trixFields' => $validatedData['attachment-post-trixFields'],
         ]);
 
-        notify()->success('Post created successfully!');
+        session()->flash('success', 'Your post has been published!');
 
-        return redirect()->route('posts.create');
+        return redirect()->route('posts.show', $post);
     }
 
     /**
@@ -59,9 +59,14 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Post $post): View
     {
-        //
+        $post_content = $post->trix_rich_texts->first()->content;
+
+        return view('posts.show', [
+            'post' => $post,
+            'post_content' => $post_content,
+        ]);
     }
 
     /**

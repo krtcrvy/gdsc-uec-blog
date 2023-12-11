@@ -20,14 +20,13 @@
 
         @trixassets
 
+        @livewireStyles
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        <!-- Styles -->
-        @livewireStyles
     </head>
     <body :class="{ 'dark': darkMode === true }"
-          class="bg-white font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-white"
+          class="bg-white font-sans text-gray-900 antialiased dark:text-white dark:bg-gray-900"
           x-data="{ darkMode: $persist(false) }">
 
         <!-- Page Content -->
@@ -36,6 +35,7 @@
         </main>
 
         {{-- @stack('modals') --}}
+
         @livewireScripts
     </body>
 </html>
