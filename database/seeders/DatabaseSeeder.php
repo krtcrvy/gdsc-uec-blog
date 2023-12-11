@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -20,12 +21,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        /* $post = Post::create([
-             'title' => fake()->sentence(),
-             'slug' => fake()->slug(),
-             'post_image_path' => fake()->imageUrl(),
-             'user_id' => $user->id,
-             'tags' => ['PHP', 'Laravel'],
-         ]);*/
+        Tag::create([
+            'name' => 'Laravel',
+            'slug' => 'laravel',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

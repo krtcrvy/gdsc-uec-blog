@@ -12,9 +12,8 @@ class BlogGrid extends Component
 
     public function render()
     {
-
         return view('livewire.blog-grid', [
-            'posts' => Posts::paginate(6),
+            'posts' => Posts::with('tags')->paginate(6),
         ]);
     }
 }

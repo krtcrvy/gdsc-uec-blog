@@ -14,7 +14,6 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.2",
         "spatie/laravel-permission": "^6.2",
-        "spatie/laravel-tags": "^4.5",
         "te7a-houdini/laravel-trix": "^2.0"
     },
     "require-dev": {

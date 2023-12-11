@@ -11,7 +11,22 @@
                         <x-input :value="old('title')" autofocus id="title" name="title" required type="text"/>
                         <x-input-error class="mt-2" for="title"/>
                     </div>
-                    
+
+                    <div class="sm:col-span-2">
+                        <label class="mb-2 block text-sm font-medium text-gray-900 dark:text-white" for="tag_id">
+                            {{ __('Tag') }}
+                        </label>
+                        <select
+                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                            id="tag_id" name="tag_id">
+                            <option selected>{{ __('Choose a tag for your post') }}</option>
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
+
+                    </div>
+
                     <div class="sm:col-span-2">
 
                         <div class="flex w-full items-center justify-center">

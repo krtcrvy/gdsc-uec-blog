@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Tag;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -28,11 +29,14 @@ class PostController extends Controller
             'title' => 'required|max:50|min:1',
             'body' => 'required',
             'post_image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
+            'tag_id' => 'required',
         ]);
 
         if ($request->hasFile('post_image_path')) {
             $validatedData['post_image_path'] = $request->file('post_image_path')->store('images', 'public');
         }
+
+        $tag = Tag::findOrFail($validatedData['tag_id']);
 
         $post = Post::create([
             'user_id' => auth()->user()->id,
@@ -41,6 +45,8 @@ class PostController extends Controller
             'body' => Markdown::convert($validatedData['body'])->getContent(),
             'post_image_path' => $validatedData['post_image_path'],
         ]);
+
+        $post->tags()->sync([$tag->id]);
 
         session()->flash('success', 'Your post has been published!');
 
@@ -52,7 +58,11 @@ class PostController extends Controller
      */
     public function create(): View
     {
-        return view('posts.create');
+        $tags = Tag::all();
+
+        return view('posts.create', [
+            'tags' => $tags,
+        ]);
     }
 
     /**

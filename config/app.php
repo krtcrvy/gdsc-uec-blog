@@ -160,7 +160,6 @@ return [
          * Package Service Providers...
          */
         Spatie\Permission\PermissionServiceProvider::class,
-        Spatie\Tags\TagsServiceProvider::class,
         /*
          * Application Service Providers...
          */
