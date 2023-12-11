@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('home');
-Route::get('/view-posts', function () {
-    return view('view-posts');
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/blog-list', function () {
+    return view('blog-list');
 });
 Route::middleware([
     'auth:sanctum',
