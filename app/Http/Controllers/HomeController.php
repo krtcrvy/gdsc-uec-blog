@@ -9,8 +9,13 @@ class HomeController extends Controller
     /**
      * Show the application home page.
      */
-    public function __invoke(): View
+    public function index(): View
     {
         return view('home.index');
+    }
+
+    public function about(): View
+    {
+        return view('home.about');
     }
 }

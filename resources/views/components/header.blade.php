@@ -127,7 +127,8 @@
                                     wire:navigate>{{ __('Blog') }}</x-nav-link>
                     </li>
                     <li>
-                        <x-nav-link :active="request()->routeIs('about')" href="#">{{ __('About') }}</x-nav-link>
+                        <x-nav-link :active="request()->routeIs('about')"
+                                    href="{{ route('about') }}" wire:navigate>{{ __('About') }}</x-nav-link>
                     </li>
                 </ul>
             </div>

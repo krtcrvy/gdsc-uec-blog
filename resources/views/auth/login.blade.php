@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Login') }}
+    </x-slot>
     <x-header/>
     <x-authentication-card>
         <x-slot name="logo">

@@ -30,7 +30,7 @@
                         <span class="text-sm">{{ $post->created_at->diffForHumans() }}</span>
                     </div>
                     <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        <a href="{{ route('posts.show', $post) }}">
+                        <a href="{{ route('posts.show', $post) }}" wire:navigate>
                             {{ $post->title }}
                         </a>
                     </h2>

@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Register') }}
+    </x-slot>
     <x-header/>
     <x-authentication-card>
         <x-slot name="logo">

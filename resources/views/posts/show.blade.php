@@ -1,9 +1,12 @@
 <x-app-layout>
-    <x-header />
+    <x-slot name="title">
+        {{ __('Blog') }}
+    </x-slot>
+    <x-header/>
     <main class="bg-white pb-16 pt-8 antialiased dark:bg-gray-900 lg:pb-24 lg:pt-16">
         @if (session()->has('success'))
             <div class="mx-auto mb-6 max-w-2xl">
-                <x-success-alert />
+                <x-success-alert/>
             </div>
         @endif
         <div class="mx-auto flex max-w-screen-xl justify-between px-4">
@@ -13,12 +16,11 @@
                     <address class="mb-6 flex items-center not-italic">
                         <div class="mr-3 inline-flex items-center text-sm text-gray-900 dark:text-white">
                             <img alt="{{ $post->user->name }}" class="mr-4 h-16 w-16 rounded-full"
-                                src="{{ $post->user->profile_photo_url }}">
+                                 src="{{ $post->user->profile_photo_url }}">
                             <div>
-                                <a class="text-xl font-bold text-gray-900 dark:text-white" href="#"
-                                    rel="author">
+                                <p class="text-xl font-bold text-gray-900 dark:text-white">
                                     {{ $post->user->name }}
-                                </a>
+                                </p>
                                 <p class="text-base text-gray-500 dark:text-gray-400">
                                     {{ $post->user->email }}
                                 </p>
@@ -33,7 +35,6 @@
                         {{ $post->title }}
                     </h1>
 
-
                     <img alt="{{ $post->title }}" class="mb-4 rounded-lg" src="{{ $post->post_image_path }}">
 
                 </header>
@@ -45,5 +46,5 @@
         </div>
     </main>
 
-    <x-footer />
+    <x-footer/>
 </x-app-layout>
