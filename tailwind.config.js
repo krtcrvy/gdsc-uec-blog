@@ -22,6 +22,13 @@ export default {
             colors: {
                 primary: colors.violet,
             },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        maxWidth: "120ch",
+                    },
+                },
+            },
         },
     },
 

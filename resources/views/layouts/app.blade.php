@@ -18,6 +18,8 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet">
 
+        @trixassets
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -25,7 +27,8 @@
         @livewireStyles
     </head>
     <body :class="{ 'dark': darkMode === true }"
-        class="bg-white font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-white" x-data="{ darkMode: $persist(false) }">
+          class="bg-white font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-white"
+          x-data="{ darkMode: $persist(false) }">
 
         <!-- Page Content -->
         <main>
@@ -33,7 +36,6 @@
         </main>
 
         {{-- @stack('modals') --}}
-
         @livewireScripts
     </body>
 </html>

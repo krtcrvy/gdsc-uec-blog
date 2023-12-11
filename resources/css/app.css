@@ -1,5 +1,3 @@
-@import 'trix/dist/trix.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,3 +6,109 @@
     display: none;
 }
 
+@layer base {
+    trix-editor {
+        @apply w-full;
+        @apply h-96;
+        @apply overflow-y-auto;
+        @apply prose;
+        @apply dark:prose-invert;
+        @apply prose-a:text-blue-600;
+        @apply prose-a:dark:text-blue-400;
+        @apply prose-pre:text-gray-900;
+        @apply prose-pre:dark:text-gray-100;
+        @apply prose-pre:bg-gray-100;
+        @apply prose-pre:dark:bg-gray-900;
+        @apply prose-code:text-gray-900;
+        @apply prose-code:dark:text-gray-100;
+        @apply prose-code:bg-gray-100;
+        @apply prose-code:dark:bg-gray-900;
+    }
+}
+
+trix-toolbar .trix-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+trix-toolbar .trix-button {
+    background-color: #6d28d9;
+    color: #ffffff;
+}
+
+trix-toolbar .trix-button-group {
+    background: none;
+}
+
+
+trix-toolbar .trix-button--icon-bold::before {
+    background-image: url("/public/images/icons/bold-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-italic::before {
+    background-image: url("/public/images/icons/italic-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-strike::before {
+    background-image: url("/public/images/icons/strikethrough-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-link::before {
+    background-image: url("/public/images/icons/link-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-heading-1::before {
+    background-image: url("/public/images/icons/heading-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-quote::before {
+    background-image: url("/public/images/icons/quote-left-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-code::before {
+    background-image: url("/public/images/icons/code-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-bullet-list::before {
+    background-image: url("/public/images/icons/list-ul-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-number-list::before {
+    background-image: url("/public/images/icons/list-ol-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-decrease-nesting-level::before {
+    background-image: url("/public/images/icons/indent-solid.svg");
+    background-size: 1rem 1rem;
+    transform: rotate(180deg);
+}
+
+trix-toolbar .trix-button--icon-increase-nesting-level::before {
+    background-image: url("/public/images/icons/indent-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-attach::before {
+    background-image: url("/public/images/icons/paperclip-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-undo::before {
+    background-image: url("/public/images/icons/rotate-left-solid.svg");
+    background-size: 1rem 1rem;
+}
+
+trix-toolbar .trix-button--icon-redo::before {
+    background-image: url("/public/images/icons/rotate-right-solid.svg");
+    background-size: 1rem 1rem;
+}

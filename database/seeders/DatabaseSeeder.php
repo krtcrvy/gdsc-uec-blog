@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -21,13 +20,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        $post = Post::create([
-            'title' => fake()->sentence(),
-            'slug' => fake()->slug(),
-            'body' => fake()->paragraph(),
-            'post_image_path' => fake()->imageUrl(),
-            'user_id' => $user->id,
-            'tags' => ['PHP', 'Laravel'],
-        ]);
+        /* $post = Post::create([
+             'title' => fake()->sentence(),
+             'slug' => fake()->slug(),
+             'post_image_path' => fake()->imageUrl(),
+             'user_id' => $user->id,
+             'tags' => ['PHP', 'Laravel'],
+         ]);*/
     }
 }
