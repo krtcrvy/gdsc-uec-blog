@@ -1,7 +1,8 @@
 <x-app-layout>
+    <x-header/>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo/>
+            <x-application-logo class="h-16 w-auto"/>
         </x-slot>
 
         <x-validation-errors class="mb-4"/>
@@ -48,4 +49,5 @@
             </div>
         </form>
     </x-authentication-card>
+    <x-footer/>
 </x-app-layout>

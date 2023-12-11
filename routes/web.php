@@ -27,4 +27,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::resource('posts', PostController::class)->only(['create', 'store', 'show']);
+Route::resource('posts', PostController::class)->only(['show', 'index']);

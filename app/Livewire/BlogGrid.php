@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Post as Posts;
+use App\Models\Post;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,7 +13,7 @@ class BlogGrid extends Component
     public function render()
     {
         return view('livewire.blog-grid', [
-            'posts' => Posts::with('tags')->paginate(6),
+            'posts' => Post::latest()->paginate(10),
         ]);
     }
 }

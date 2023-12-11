@@ -1,43 +1,44 @@
 <x-app-layout>
+    <x-header/>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <x-application-logo class="h-14 w-auto"/>
         </x-slot>
 
-        <x-validation-errors class="mb-4" />
+        <x-validation-errors class="mb-4"/>
 
         <form action="{{ route('register') }}" method="POST">
             @csrf
 
             <div>
-                <x-label for="name" value="{{ __('Name') }}" />
+                <x-label for="name" value="{{ __('Name') }}"/>
                 <x-input :value="old('name')" autocomplete="name" autofocus class="mt-1 block w-full" id="name"
-                         name="name" required type="text" />
+                         name="name" required type="text"/>
             </div>
 
             <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
+                <x-label for="email" value="{{ __('Email') }}"/>
                 <x-input :value="old('email')" autocomplete="username" class="mt-1 block w-full" id="email"
-                         name="email" required type="email" />
+                         name="email" required type="email"/>
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
+                <x-label for="password" value="{{ __('Password') }}"/>
                 <x-input autocomplete="new-password" class="mt-1 block w-full" id="password" name="password" required
-                         type="password" />
+                         type="password"/>
             </div>
 
             <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}"/>
                 <x-input autocomplete="new-password" class="mt-1 block w-full" id="password_confirmation"
-                         name="password_confirmation" required type="password" />
+                         name="password_confirmation" required type="password"/>
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">
                         <div class="flex items-center">
-                            <x-checkbox id="terms" name="terms" required />
+                            <x-checkbox id="terms" name="terms" required/>
 
                             <div class="ms-2">
                                 {!! __('I agree to the :terms_of_service and :privacy_policy', [
@@ -72,4 +73,5 @@
             </div>
         </form>
     </x-authentication-card>
+    <x-footer/>
 </x-app-layout>

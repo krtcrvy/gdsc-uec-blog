@@ -1,7 +1,7 @@
 <section class="bg-white dark:bg-gray-900" wire:poll>
     <div class="mx-auto max-w-screen-xl px-4 py-32 lg:px-6">
         <div class="mx-auto mb-8 flex max-w-screen-sm flex-col items-center justify-center text-center lg:mb-16">
-            <img alt="" class="h-32 w-32" src="{{ asset('/images/favicon/logo.svg') }}">
+            <img alt="logo" class="h-32 w-32" src="{{ asset('/images/favicon/logo.svg') }}">
             <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white lg:text-4xl">
                 {{ __('GDSC UE Caloocan Blog') }}
             </h2>
@@ -58,6 +58,9 @@
                     </div>
                 </article>
             @endforeach
+        </div>
+        <div class="mt-16 text-gray-900 dark:text-white">
+            {{ $posts->links(data: ['scrollTo' => false]) }}
         </div>
     </div>
 </section>

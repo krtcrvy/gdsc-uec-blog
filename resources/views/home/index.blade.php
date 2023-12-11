@@ -7,7 +7,5 @@
 
     <x-home.hero-section/>
 
-    <livewire:blog-grid/>
-
     <x-footer/>
 </x-app-layout>

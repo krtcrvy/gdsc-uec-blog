@@ -1,5 +1,5 @@
 <svg {!! $attributes->merge([
-    'class' => 'h-6 w-auto',
+    'class' => '',
 ]) !!} height="64" viewBox="0 0 128 64" width="128" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_1233_11302)">
         <path
