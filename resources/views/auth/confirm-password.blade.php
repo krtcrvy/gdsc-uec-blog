@@ -1,7 +1,11 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Confirm Password') }}
+    </x-slot>
+    <x-header/>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo/>
+            <x-application-logo class="h-16 w-auto"/>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
@@ -20,10 +24,11 @@
             </div>
 
             <div class="flex justify-end mt-4">
-                <x-button class="ms-4">
+                <x-primary-button class="ms-4">
                     {{ __('Confirm') }}
-                </x-button>
+                </x-primary-button>
             </div>
         </form>
     </x-authentication-card>
+    <x-footer/>
 </x-app-layout>

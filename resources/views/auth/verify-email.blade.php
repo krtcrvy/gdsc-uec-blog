@@ -1,7 +1,11 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Verify Email') }}
+    </x-slot>
+    <x-header/>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo/>
+            <x-application-logo class="h-16 w-auto"/>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
@@ -19,9 +23,9 @@
                 @csrf
 
                 <div>
-                    <x-button type="submit">
+                    <x-primary-button type="submit">
                         {{ __('Resend Verification Email') }}
-                    </x-button>
+                    </x-primary-button>
                 </div>
             </form>
 
@@ -43,4 +47,5 @@
             </div>
         </div>
     </x-authentication-card>
+    <x-footer/>
 </x-app-layout>

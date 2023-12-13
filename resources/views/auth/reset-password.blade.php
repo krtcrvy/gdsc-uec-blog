@@ -1,7 +1,10 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Reset Password') }}
+    </x-slot>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo/>
+            <x-application-logo class="h-16 w-auto"/>
         </x-slot>
 
         <x-validation-errors class="mb-4"/>
@@ -30,9 +33,9 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
+                <x-primary-button>
                     {{ __('Reset Password') }}
-                </x-button>
+                </x-primary-button>
             </div>
         </form>
     </x-authentication-card>

@@ -64,7 +64,7 @@ class User extends Authenticatable implements HasAvatar
 
     public function getFilamentAvatarUrl(): ?string
     {
-        return $this->profile_photo_path;
+        return asset('storage/'.$this->profile_photo_path);
     }
 
     public function posts(): HasMany

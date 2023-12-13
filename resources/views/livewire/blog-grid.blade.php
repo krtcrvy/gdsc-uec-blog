@@ -1,5 +1,5 @@
 <section class="bg-white dark:bg-gray-900" wire:poll>
-    <div class="mx-auto max-w-screen-xl px-4 py-32 lg:px-6">
+    <div class="mx-auto max-w-screen-xl px-4 py-36 lg:px-6">
         <div class="mx-auto mb-8 flex max-w-screen-sm flex-col items-center justify-center text-center lg:mb-16">
             <img alt="logo" class="h-32 w-32" src="{{ asset('/images/favicon/logo.svg') }}">
             <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white lg:text-4xl">

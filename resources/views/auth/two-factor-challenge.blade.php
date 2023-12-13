@@ -1,7 +1,11 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ __('Two Factor Authentication') }}
+    </x-slot>
+    <x-header/>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo/>
+            <x-application-logo class="h-16 w-auto"/>
         </x-slot>
 
         <div x-data="{ recovery: false }">
@@ -52,11 +56,12 @@
                         {{ __('Use an authentication code') }}
                     </button>
 
-                    <x-button class="ms-4">
+                    <x-primary-button class="ms-4">
                         {{ __('Log in') }}
-                    </x-button>
+                    </x-primary-button>
                 </div>
             </form>
         </div>
     </x-authentication-card>
+    <x-footer/>
 </x-app-layout>
